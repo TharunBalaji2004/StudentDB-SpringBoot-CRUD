@@ -1,3 +1,7 @@
+# StudentDB-SpringBoot-CRUD
+
+![Pasted image 20230624202413](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/bb726336-815f-4da3-a8bc-13f9ee416c54)
+
 Spring Initializr 🌏 - https://start.spring.io/
 
 - **Lombok** - A prominent Java library for annotations(@) and reduces boilerplate code
@@ -24,6 +28,8 @@ public class SpringbootpracticeApplication {
 
 ### Main three components of SpringBoot Application
 
+![image](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/47134b5a-8d83-42a1-93eb-93d35f22a612)
+
 1. **Controller** - acts as an entry point, and consists the path (Eg: addMethod(path))
 2. **Service** - contains the implementation of method
 3. **Repository** - saves the data fetched by the method
@@ -31,7 +37,7 @@ public class SpringbootpracticeApplication {
 
 **Flow:** Controller ➡️ Service ➡️ Repository
 
-<br>
+
 ## 1. Creating a Model Class
 
 The Model Class should contain the data properties such as the datatype, constraints of data which is going to be stored in the database. Checkout the following example:
@@ -250,7 +256,7 @@ Here, the `addMethod()` sends the converted java object to `createStudent()` met
 
 Since we have completed all the implementation part lets bootstrap the server and test by making sample HTTP requests. Generally the HTTP requests are given as:
 
-![[Pasted image 20230625222534.png]]
+![Pasted image 20230625222534](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/c9d2ec82-3ecc-4117-8280-c8cc6af7f856)
 
 We have implemented our Controller to handle **POST** and **GET** requests received by the server, to add new student data and retrieve all the data. Lets try playing around our server using Postman 📫. The following steps will help us to understand how to perform HTTP requests without using Frontend:
 
@@ -275,12 +281,13 @@ SpringbootpracticeApplication: Started SpringbootpracticeApplication in 4.42 sec
 
 As we can see the SpringBoot server has been started, and listens to `localhost: 8080` with HTTP protocol on root path. Lets try opening using our browser:
 
-
+![Pasted image 20230625223347](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/257333dc-a238-4a05-a8ab-0a3f793305d4)
 
 It shows as _Whitelabel Error Page_ because, we didn't sent any HTML or XML file as response to the request sent to server. We will not be requiring frontend for passing data, and that's where Postman comes into the picture.
 
 ### 2. Using Postman
 
+![Pasted image 20230625223758](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/4799e25d-274f-47f6-a244-251727f2d48e)
 
 Lets perform **POST** operation, adding new student data to the database using our server.
 
@@ -300,10 +307,13 @@ In order to add new student data, change `Body` and data type to `raw` and speci
 
 On clicking **SEND** button, POST request along with the data entered would be sent to the server which is listening at `port: 8080`
 
+![Pasted image 20230625224459](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/d07a797f-deb3-4475-a076-02f6fe553337)
 
 On successful handling of request, the string message is been returned as we have implemented in the Controller class.
 
 Lets perform the **GET** operation after adding few number of student data as we done above. On sending the request, all the students data added to the database is being fetched as list:
+
+![Pasted image 20230625225208](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/f99eaec3-16af-4437-8ac0-71511f263edc)
 
 ```json
 [
@@ -328,18 +338,21 @@ The H2 Database, stores the data in the form of Relational schema. The H2 Databa
 server.port = 8080  
 spring.datasource.url=jdbc:h2:mem:testdb  
 spring.datasource.driver-class-name=org.h2.Driver  
-spring.datasource.username=TharunBalaji  
-spring.datasource.password=2004  
+spring.datasource.username=TharunBalaji  // Your desired name
+spring.datasource.password=2004  // Your desired password
 spring.h2.console.enabled=true  
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
 
 On saving the file, and go to the browser where we opened the `localhost: 8080` initially, add an extra path as `http://localhost:8080/h2-console` and it redirects to the H2 Database console, where we can login to the database session with specified `username` and `password`
 
+![Pasted image 20230625230019](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/29129ae2-b3da-4a56-babb-e449b6ed40b9)
+
 As we can see the H2 Database console is being logged in, and on the left side we can see out `StudentModel` as `STUDENT_MODEL` relational table and the data members as respective columns
 
-On querying the data, we can see that the data which was added using the HTTP requests with Postman are stored in the database under `STUDENT_MODEL` relational table.
+![Pasted image 20230625230054](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/70af9820-bab1-469d-8daf-2536a2b7c62e)
 
+On querying the data, we can see that the data which was added using the HTTP requests with Postman are stored in the database under `STUDENT_MODEL` relational table.
 
 ## **Performing CRUD Operations**
 
