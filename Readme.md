@@ -16,9 +16,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
   
 @SpringBootApplication  
 public class SpringbootpracticeApplication {  
-	public static void main(String[] args) {  
-		SpringApplication.run(SpringbootpracticeApplication.class, args);  
-	}  
+  public static void main(String[] args) {  
+    SpringApplication.run(SpringbootpracticeApplication.class, args);  
+  }  
 }
 ```
 
@@ -38,24 +38,24 @@ The Model Class should contain the data properties such as the datatype, constra
 
 ```java
 public class StudentModel {  
-	public String firstName;  
-	public String lastName;  
+  public String firstName;  
+  public String lastName;  
 
-	fun setFirstName(String firstName){
-		this.firstName = firstName;
-	}
+  fun setFirstName(String firstName){
+    this.firstName = firstName;
+  }
 
-	fun getFirstName(){
-		return this.firstName;
-	}
+  fun getFirstName(){
+    return this.firstName;
+  }
 
-	fun setLastName(String lastName){
-		this.lastName = lastName;
-	}
+  fun setLastName(String lastName){
+    this.lastName = lastName;
+  }
 
-	fun getLastName(){
-		return this.lastName;
-	}
+  fun getLastName(){
+    return this.lastName;
+  }
 }
 ```
 
@@ -72,8 +72,8 @@ Checkout the follow example, where the same Model Class is being implemented wit
 @Data
 @Entity  
 public class StudentModel {  
-	public String firstName;  
-	public String lastName;  
+  public String firstName;  
+  public String lastName;  
 }
 ```
 
@@ -88,14 +88,14 @@ Since we will be using H2 Database for storing and fetching, the CRUD Operations
 @Data 
 @Entity 
 public class StudentModel {  
-	@jakarta.persistence.Id  
-	@GeneratedValue(strategy = GenerationType.IDENTITY)  
-	private int Id;  
-	private String firstName;  
-	private String lastName;  
-	private String email;  
-	public String address;  
-	private int age;  
+  @jakarta.persistence.Id  
+  @GeneratedValue(strategy = GenerationType.IDENTITY)  
+  private int Id;  
+  private String firstName;  
+  private String lastName;  
+  private String email;  
+  public String address;  
+  private int age;  
 }
 ```
 
@@ -130,11 +130,11 @@ Now as the request enters into the main path, there may exist many subpaths whic
 @RequestMapping("/student")
 public class StudentController {
 
-	@PostMapping("/addstudent")
-	public void addMethod() {}
-	
-	@GetMapping("/getall")
-	public List<StudentModel> getaAll() {}
+  @PostMapping("/addstudent")
+  public void addMethod() {}
+  
+  @GetMapping("/getall")
+  public List<StudentModel> getaAll() {}
 	
 }
 ```
@@ -154,9 +154,9 @@ The Service class acts as a medium between Controller and Repository (or) Databa
 @Service
 public class StudentService {
 
-	public void createStudent() {}
-	
-	public List<StudentModel> getStudents() {}
+  public void createStudent() {}
+  
+  public List<StudentModel> getStudents() {}
 
 }
 ```
@@ -192,16 +192,16 @@ The following code creates an object of `StudentRepository` and calls inside ser
 @Service
 public class StudentService {
 
-	@Autowired
-	StudentRepository studentRepository;
+  @Autowired
+  StudentRepository studentRepository;
 
-	public void createStudent(StudentModel studentModel) {
-		studentRepository.save(studentModel);
-	}
+  public void createStudent(StudentModel studentModel) {
+    studentRepository.save(studentModel);
+  }
 
-	public List<StudentModel> getStudents() {
-		return studentRepository.findAll();
-	}
+  public List<StudentModel> getStudents() {
+    return studentRepository.findAll();
+  }
 	
 }
 ```
@@ -221,19 +221,19 @@ As we implemented all the methods inside the Service class, now we have to call 
 @RequestMapping("/student")
 public class StudentController {
 
-	@Autowired
-	private StudentService studentService;
+  @Autowired
+  private StudentService studentService;
 
-	@PostMapping("/addStudent")
-	public String addMethod(@RequestBody StudentModel studentModel) {
-		studentService.createStudent(studentModel);
-		return "New student data added successfully!!";
-	}
+  @PostMapping("/addStudent")
+  public String addMethod(@RequestBody StudentModel studentModel) {
+    studentService.createStudent(studentModel);
+    return "New student data added successfully!!";
+  }
 
-	@GetMapping("/getAll")
-	public List<StudentModel> getAll() {
-		return studentService.getStudents();
-	}
+  @GetMapping("/getAll")
+  public List<StudentModel> getAll() {
+    return studentService.getStudents();
+  }
 }
 ```
 
@@ -293,8 +293,8 @@ In order to add new student data, change `Body` and data type to `raw` and speci
 
 ```json
 {
-	"firstName" : "Tharun",
-	"lastName" : "Balaji"
+  "firstName" : "Tharun",
+  "lastName" : "Balaji"
 }
 ```
 
@@ -307,14 +307,14 @@ Lets perform the **GET** operation after adding few number of student data as we
 
 ```json
 [
-	{
-		"firstName": "Tharun",
-		"lastName": "Balaji"
-	},
-	{
-		"firstName": "Harish",
-		"lastName": "Balaji"
-	}
+  {
+    "firstName": "Tharun",
+    "lastName": "Balaji"
+  },
+  {
+    "firstName": "Harish",
+    "lastName": "Balaji"
+  }
 ]
 ```
 
@@ -354,8 +354,8 @@ In order to add list of students directly to the database, the sub-path method s
 ```java
 @PostMapping("/addStudentList")  
 public String addStudentList(@RequestBody List<StudentModelClass> studentList) {  
-	studentService.addStudents(studentList);  
-	return "List of students added successfully!!";  
+  studentService.addStudents(studentList);  
+  return "List of students added successfully!!";  
 }
 ```
 
@@ -363,7 +363,7 @@ public String addStudentList(@RequestBody List<StudentModelClass> studentList) {
 
 ```java
 public void addStudents(List<StudentModelClass> studentList) {  
-	studentRepository.saveAll(studentList);  
+  studentRepository.saveAll(studentList);  
 }
 ```
 
@@ -379,7 +379,7 @@ In order to get the student from the database by using respective Id, then the d
 ```java
 @GetMapping("/get/{id}")  
 public StudentModelClass getStudent(@PathVariable int id) {  
-	return studentService.getStudent(id);  
+  return studentService.getStudent(id);  
 }
 ```
 
@@ -389,7 +389,7 @@ public StudentModelClass getStudent(@PathVariable int id) {
 
 ```java
 public StudentModelClass getStudent(int id) {  
-	return studentRepository.findById(id).orElse(null);  
+  return studentRepository.findById(id).orElse(null);  
 }
 ```
 
@@ -406,8 +406,8 @@ In order to delete student by Id, similar to get Student by id, the desired `id`
 ```java
 @GetMapping("/delete/{id}")  
 public String deleteStudent(@PathVariable int id) {  
-	studentService.deleteStudent(id);  
-	return "Student with Id: " + id + " deleted";  
+  studentService.deleteStudent(id);  
+  return "Student with Id: " + id + " deleted";  
 }
 ```
 
@@ -415,7 +415,7 @@ public String deleteStudent(@PathVariable int id) {
 
 ```java
 public void deleteStudent(int id) {  
-	studentRepository.deleteById(id);  
+  studentRepository.deleteById(id);  
 }
 ```
 
@@ -430,12 +430,12 @@ To update the data by using the student `id` stored in the database, usually **P
 ```java
 @PatchMapping("/update/{id}")  
 public String updateStudent(@PathVariable int id, @RequestBody StudentModel studentModel){  
-	boolean idFound = studentService.updateStudent(id, studentModel);  
-	if (idFound) {  
-		return "Student with Id: " + id + " updated";  
-	} else {  
-		return "Student with Id: " + id + " is unavailable";  
-	}  
+  boolean idFound = studentService.updateStudent(id, studentModel);  
+  if (idFound) {  
+      return "Student with Id: " + id + " updated";  
+  } else {  
+      return "Student with Id: " + id + " is unavailable";  
+  }  
 }
 ```
 
@@ -445,24 +445,24 @@ public String updateStudent(@PathVariable int id, @RequestBody StudentModel stud
 
 ```java
 public boolean updateStudent(int id, StudentModelClass studentModelClass) {  
-	boolean idFound = false;  
-	StudentModelClass oldData = null;  
-	Optional<StudentModelClass> optional = studentRepository.findById(id);  
-	  
-	if (optional.isPresent()) {  
-		idFound = true;  
-		oldData = optional.get();
-		  
-		oldData.setFirstName(studentModelClass.getFirstName());  
-		oldData.setLastName(studentModelClass.getLastName());  
-		oldData.setAge(studentModelClass.getAge());  
-		oldData.setAddress(studentModelClass.getAddress());  
-		oldData.setEmail(studentModelClass.getEmail());  
-		
-		studentRepository.save(oldData);  
-	}  
-	  
-	return idFound;  
+  boolean idFound = false;  
+  StudentModelClass oldData = null;  
+  Optional<StudentModelClass> optional = studentRepository.findById(id);  
+    
+  if (optional.isPresent()) {  
+      idFound = true;  
+      oldData = optional.get();
+        
+      oldData.setFirstName(studentModelClass.getFirstName());  
+      oldData.setLastName(studentModelClass.getLastName());  
+      oldData.setAge(studentModelClass.getAge());  
+      oldData.setAddress(studentModelClass.getAddress());  
+      oldData.setEmail(studentModelClass.getEmail());  
+      
+      studentRepository.save(oldData);  
+  }  
+    
+  return idFound;  
 }
 ```
 
@@ -478,34 +478,34 @@ The modified code for `updateStudent()` is given as:
 
 ```java
 public boolean updateStudent(int id, StudentModelClass studentModelClass) {  
-	boolean idFound = false;  
-	StudentModelClass oldData = null;  
-	Optional<StudentModelClass> optional = studentRepository.findById(id);  
-	  
-	if (optional.isPresent()) {  
-		idFound = true;  
-		oldData = optional.get();  
-		
-		if (studentModelClass.getFirstName() != null) {  
-			oldData.setFirstName(studentModelClass.getFirstName());  
-		}  
-		if (studentModelClass.getFirstName() != null) {  
-			oldData.setFirstName(studentModelClass.getFirstName());  
-		}  
-		if (studentModelClass.getFirstName() != null) {  
-			oldData.setFirstName(studentModelClass.getFirstName());  
-		}  
-		if (studentModelClass.getFirstName() != null) {  
-			oldData.setFirstName(studentModelClass.getFirstName().);  
-		}  
-		if (studentModelClass.getFirstName() != null) {  
-			oldData.setFirstName(studentModelClass.getFirstName());  
-		}  
-		  
-		studentRepository.save(oldData);  
-	}  
-	  
-	return idFound;  
+  boolean idFound = false;  
+  StudentModelClass oldData = null;  
+  Optional<StudentModelClass> optional = studentRepository.findById(id);  
+    
+  if (optional.isPresent()) {  
+      idFound = true;  
+      oldData = optional.get();  
+      
+      if (studentModelClass.getFirstName() != null) {  
+          oldData.setFirstName(studentModelClass.getFirstName());  
+      }  
+      if (studentModelClass.getFirstName() != null) {  
+          oldData.setFirstName(studentModelClass.getFirstName());  
+      }  
+      if (studentModelClass.getFirstName() != null) {  
+          oldData.setFirstName(studentModelClass.getFirstName());  
+      }  
+      if (studentModelClass.getFirstName() != null) {  
+          oldData.setFirstName(studentModelClass.getFirstName().);  
+      }  
+      if (studentModelClass.getFirstName() != null) {  
+          oldData.setFirstName(studentModelClass.getFirstName());  
+      }  
+        
+      studentRepository.save(oldData);  
+  }  
+    
+  return idFound;  
 }
 ```
 
