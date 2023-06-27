@@ -1,15 +1,15 @@
 # StudentDB-SpringBoot-CRUD
 
-<p>
+<p align="center">
  <img alt="springboot" src="https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/b4d1c505-6c91-4c81-ad6a-18a6865ba0d5" height="110px" width="220px" />
  <img alt="springboot" src="https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/c944f170-17e4-479d-822e-2c1866cfbc94" height="150px" width="150px"" />
  <img alt="springboot" src="https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/94f4ef0a-8307-4f5d-8e67-881b7f730886" height="100px" width="200px" />
 </p>
 
-<p>
+<p align="center">
 <img alt="GitHub" src="https://img.shields.io/github/license/TharunBalaji2004/StudentDB-SpringBoot-CRUD">
-<img alt="GitHub last commit (by committer)" src="https://img.shields.io/github/last-commit/TharunBalaji2004/StudentDB-SpringBoot-CRUD">
-
+<img alt="Static Badge" src="https://img.shields.io/badge/SpringBoot-passing-brightgreen?logo=springboot">
+<img alt="GitHub last commit (by committer)" src="https://img.shields.io/github/last-commit/TharunBalaji2004/StudentDB-SpringBoot-CRUD?logo=github&color=%238A2BE2">
 </p>
 
 
