@@ -1,5 +1,23 @@
 # StudentDB-SpringBoot-CRUD
 
+### Contents
+- [Creating a project in SpringBoot](#springboot-project-creation)
+- [SpringBoot RESTful Architecture](#springboot-restful-architecture)
+   - [1. Creating Model Class](#1-creating-a-model-class)
+   - [2. Creating a Controller Class](#2-creating-a-controller-class)
+   - [3. Creating Service Class](#3-creating-service-class)
+   - [4. Create Repository Interface](#4-create-repository-interface)
+   - [5. Create instance of Repository in Service](#5-create-instance-of-repository-in-service)
+   - [6. Connecting Controller to Service](#6-connecting-controller-to-service)
+   - [7. Making HTTP requests to the Server](#7-making-http-requests-to-the-server)
+- [Performing CRUD Operations](#performing-crud-operations)
+   - [C: Create List of student data](#adding-list-of-students)
+   - [R: Read student data using Id](#get-student-by-id)
+   - [U: Update entire or specific fields](#update-student-by-id)
+   - [D: Delete student daa using Id](#delete-student-by-id)
+
+## SpringBoot Project creation
+
 ![Pasted image 20230624202413](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/bb726336-815f-4da3-a8bc-13f9ee416c54)
 
 Spring Initializr 🌏 - https://start.spring.io/
@@ -26,7 +44,7 @@ public class SpringbootpracticeApplication {
 }
 ```
 
-### Main three components of SpringBoot Application
+## SpringBoot RESTful Architecture
 
 ![image](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/47134b5a-8d83-42a1-93eb-93d35f22a612)
 
@@ -248,7 +266,7 @@ public class StudentController {
 Here, the `addMethod()` sends the converted java object to `createStudent()` method from Service class, and return a String message as return. The `getAll()` method returns a list of `StudentModel` data by calling the `getStudents()` method from Service class.
 
 | Controller | Service | Repository |
-| : --- : | : --- : | : --- : |
+| :------: | :-------: | :--------: |
 | addMethod(StudentModel) | createStudent(StudentModel) | save(StudentModel) |
 | getAll() | getStudents() | findAll() |
 
