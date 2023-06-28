@@ -27,7 +27,7 @@
    - [C: Create List of student data](#adding-list-of-students)
    - [R: Read student data using Id](#get-student-by-id)
    - [U: Update entire or specific fields](#update-student-by-id)
-   - [D: Delete student daa using Id](#delete-student-by-id)
+   - [D: Delete student data using Id](#delete-student-by-id)
 
 ## SpringBoot Project creation
 
