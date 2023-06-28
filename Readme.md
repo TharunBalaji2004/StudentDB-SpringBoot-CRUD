@@ -530,20 +530,20 @@ public boolean updateStudent(int id, StudentModelClass studentModelClass) {
       idFound = true;  
       oldData = optional.get();  
       
-      if (studentModelClass.getFirstName() != null) {  
-          oldData.setFirstName(studentModelClass.getFirstName());  
-      }  
-      if (studentModelClass.getFirstName() != null) {  
-          oldData.setFirstName(studentModelClass.getFirstName());  
-      }  
-      if (studentModelClass.getFirstName() != null) {  
-          oldData.setFirstName(studentModelClass.getFirstName());  
-      }  
-      if (studentModelClass.getFirstName() != null) {  
-          oldData.setFirstName(studentModelClass.getFirstName().);  
-      }  
-      if (studentModelClass.getFirstName() != null) {  
-          oldData.setFirstName(studentModelClass.getFirstName());  
+      if (studentModel.getFirstName() != null) {
+	oldData.setFirstName(studentModel.getFirstName());
+      }
+      if (studentModel.getLastName() != null) {
+	oldData.setLastName(studentModel.getLastName());
+      }
+      if (studentModel.getAge() != 0) {
+	oldData.setAge(studentModel.getAge());
+      }
+      if (studentModel.getAddress() != null) {
+	oldData.setAddress(studentModel.getAddress());
+      }
+      if (studentModel.getEmail() != null) {
+	oldData.setEmail(studentModel.getEmail());
       }  
         
       studentRepository.save(oldData);  
