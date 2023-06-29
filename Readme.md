@@ -365,12 +365,12 @@ A lot of operations can be implemented by using SpringBoot CRUD Repository opera
 
 The H2 Database, stores the data in the form of Relational schema. The H2 Database also SQL for querying the data and fetch the desired results. In order to access H2 Database, the `action.properties` file in the project has to be specified with certain required information.
 
-``` python
+``` properties
 server.port = 8080  
 spring.datasource.url=jdbc:h2:mem:testdb  
 spring.datasource.driver-class-name=org.h2.Driver  
-spring.datasource.username=TharunBalaji  // Your desired name
-spring.datasource.password=2004  // Your desired password
+spring.datasource.username=TharunBalaji  # Your desired name
+spring.datasource.password=2004  # Your desired password
 spring.h2.console.enabled=true  
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
