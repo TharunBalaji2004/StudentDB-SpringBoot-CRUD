@@ -59,7 +59,7 @@ public class SpringbootpracticeApplication {
 
 ## SpringBoot RESTful Architecture
 
-![image](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/47134b5a-8d83-42a1-93eb-93d35f22a612)
+![image](https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/e5a83359-e554-4c33-82ee-7572274f5c0c)
 
 1. **Controller** - acts as an entry point, and consists the path (Eg: addMethod(path))
 2. **Service** - contains the implementation of method
@@ -323,7 +323,7 @@ It shows as _Whitelabel Error Page_ because, we didn't sent any HTML or XML file
 Lets perform **POST** operation, adding new student data to the database using our server.
 
 | Sub path | CRUD Operation |
-| : --- : | : --- : |
+| :---: | :---: |
 | /addstudent | POST |
 | /getall | GET |
 
